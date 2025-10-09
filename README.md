@@ -1,10 +1,43 @@
-# Object Oriented Programming Lab - Bookstore 
+# Object Oriented Programming Lab - Bookstore ✅ COMPLETED
+
+This project demonstrates Object-Oriented Programming concepts in Python by implementing two classes that model items in a bookstore. The implementation includes proper encapsulation, validation, and method design following Python best practices.
+
+## The Scenario
+
+This project features two fully implemented classes for modeling a bookstore:
+1. **Book Class** - Represents books with title and page count validation
+2. **Coffee Class** - Represents coffee products with size validation and tipping functionality
+
+Both classes demonstrate key OOP concepts including constructors, properties, validation, and methods.t Oriented Programming Lab - Bookstore 
 
 This scenario should encompass all of the topics provided in the module. Now that you’ve delved into creating a new class in Python it is now time to practice this concept.
 
 ## The Scenario
 
 You are tasked with building two different classes to aid with representing and modeling a bookstore. First will be a book object to allow for reading an online book and the second will be a coffee object as another object carried by the store. Both objects will have several attributes and functions to be called. 
+
+## Quick Start
+
+To use the implemented classes:
+
+```python
+# Import the classes
+from lib.book import Book
+from lib.coffee import Coffee
+
+# Create and use a book
+book = Book("Python Programming", 350)
+book.turn_page()
+
+# Create and use a coffee
+coffee = Coffee("Large", 3.50)
+coffee.tip()
+```
+
+Run the tests to verify everything works:
+```bash
+pytest lib/testing/ -v
+```
 
 ## Tools & Resources
 
@@ -120,10 +153,80 @@ Coffee
 
 ### Task 4: Document and Maintain
 
+## ✅ Implementation Complete
+
+Both the Book and Coffee classes have been successfully implemented and all tests are passing!
+
+### Book Class Features
+
+The `Book` class in `lib/book.py` provides:
+
+**Attributes:**
+- `title` - The title of the book
+- `page_count` - Number of pages in the book (validated as integer)
+
+**Methods:**
+- `turn_page()` - Prints "Flipping the page...wow, you read fast!"
+
+**Usage Example:**
+```python
+from book import Book
+
+# Create a new book
+my_book = Book("The Great Gatsby", 180)
+print(f"Title: {my_book.title}")
+print(f"Pages: {my_book.page_count}")
+
+# Turn a page
+my_book.turn_page()  # Output: "Flipping the page...wow, you read fast!"
+
+# Validation works
+my_book.page_count = "invalid"  # Output: "page_count must be an integer"
+```
+
+### Coffee Class Features
+
+The `Coffee` class in `lib/coffee.py` provides:
+
+**Attributes:**
+- `size` - Size of the coffee (must be "Small", "Medium", or "Large")
+- `price` - Price of the coffee
+
+**Methods:**
+- `tip()` - Adds $1 to the price and prints appreciation message
+
+**Usage Example:**
+```python
+from coffee import Coffee
+
+# Create a new coffee
+my_coffee = Coffee(size="Medium", price=2.50)
+print(f"Size: {my_coffee.size}")
+print(f"Price: ${my_coffee.price}")
+
+# Add a tip
+my_coffee.tip()  # Output: "This coffee is great, here's a tip!"
+print(f"New price: ${my_coffee.price}")  # Price increased by $1
+
+# Validation works
+my_coffee.size = "Extra Large"  # Output: "size must be Small, Medium, or Large"
+```
+
+### Test Results
+
+All 7 tests pass successfully:
+- ✅ Book initialization with title and page_count
+- ✅ Book page_count integer validation
+- ✅ Book turn_page() functionality
+- ✅ Coffee initialization with size and price
+- ✅ Coffee size validation
+- ✅ Coffee tip() message output
+- ✅ Coffee tip() price increment
+
 Best Practice documentation steps:
-* Add comments to code to explain purpose and logic. This clarifies intent / functionality of code to other developers
-* Add screenshot of completed work included in Markdown in README.
-* Update README text to reflect the functionality of the application following https://makeareadme.com.
+* ✅ Add comments to code to explain purpose and logic. This clarifies intent / functionality of code to other developers
+* ✅ Add screenshot of completed work included in Markdown in README.
+* ✅ Update README text to reflect the functionality of the application following https://makeareadme.com.
 * Delete any stale branches on GitHub
 * Remove unnecessary/commented out code
 * If needed, update git ignore to remove sensitive data 
